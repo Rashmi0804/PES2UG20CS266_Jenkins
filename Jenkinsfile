@@ -3,14 +3,14 @@ pipeline{
   stages{
     stage('Build'){
       steps{
-        sh 'g++ main/cloud.cpp -o output'
+        sh ' main/cloud.cpp -o output'
         build 'PES2UG20CS266-1'
         echo 'Build Successfully!'
       }
     }
     stage('Test'){
       steps{
-        './output'
+        sh './output'
         echo 'Tested successfully!'
       }
     }
